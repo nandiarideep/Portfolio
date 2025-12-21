@@ -16,28 +16,30 @@ const Skills = () => {
     { name: "Git/GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
     { name: "Netlify", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg" },
     { name: "Jira", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
+    { name: "Firebase", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
+    { name: "Express", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
     // { name: "React Router", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-800">
+    <section id="skills" className="py-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center md:mb-16 mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Skills & Tools
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-800 font-semibold max-w-3xl mx-auto">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
         </div>
 
         {/* Skill Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-8 gap-6">
           {skills.map(({ name, img }) => (
             <div
               key={name}
-              className="group bg-gray-900/60 border border-gray-700 rounded-xl p-6 flex flex-col items-center justify-center 
+              className="group bg-gray-900/60 border border-gray-700 rounded-xl p-2 flex flex-col items-center justify-center 
                 transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20"
             >
               <img

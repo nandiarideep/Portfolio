@@ -6,10 +6,11 @@ import Projects from './pages/Projects.jsx';
 import Contact from './pages/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import ExperienceTimeline from './pages/ExperienceTimeline.jsx';
+import Aurora from './components/Aurora.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <main className="h-full bg-gray-900/50 text-white relative overflow-x-hidden">
       <Navigation />
       <Hero />
       <About />
@@ -18,7 +19,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
-    </div>
+    </main>
   );
 }
 

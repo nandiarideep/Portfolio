@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import PillNav from './PillNav';
+import logo from '../assets/logo.jpeg';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const scrollToSection = (sectionId) => {
+    document.querySelector(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,71 +17,28 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  };
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Portfolio
-          </div>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white transition-colors duration-200 hover:scale-105 transform"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 py-4">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 cursor-pointer rounded-lg"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 flex justify-center ${scrolled ? 'bg-gray-900/50 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      }`}>
+      <PillNav
+        logo={logo}
+        logoAlt="Company Logo"
+        items={[
+          { label: 'Home', href: '#home', onClick: () => scrollToSection('#home') },
+          { label: 'About', href: '#about', onClick: () => scrollToSection('#about') },
+          { label: 'Journey', href: '#journey', onClick: () => scrollToSection('#journey') },
+          { label: 'Skills', href: '#skills', onClick: () => scrollToSection('#skills') },
+          { label: 'Projects', href: '#projects', onClick: () => scrollToSection('#projects') },
+          { label: 'Contact', href: '#contact', onClick: () => scrollToSection('#contact') }
+        ]}
+        activeHref="/"
+        className="custom-nav"
+        ease="power2.easeOut"
+        baseColor="#393737ff"
+        pillColor="#ffffff"
+        hoveredPillTextColor="#ffffff"
+        pillTextColor="#000000"
+      />
     </nav>
   );
 };

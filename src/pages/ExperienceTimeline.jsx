@@ -18,7 +18,6 @@ const experiences = [
       "Built UI components and optimized performance for an early-stage startup.",
   },
   {
-    date: "Mar 2023",
     title: "React Developer",
     company: "Company X",
     logo: "/logos/companyx.png",
