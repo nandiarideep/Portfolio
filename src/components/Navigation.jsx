@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import PillNav from './PillNav';
-import logo from '../assets/logo.jpeg';
+import PillNav from '@components/PillNav';
+import logo from '@assets/logo.jpeg';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,10 +34,10 @@ const Navigation = () => {
         activeHref="/"
         className="custom-nav"
         ease="power2.easeOut"
-        baseColor="#393737ff"
-        pillColor="#ffffff"
-        hoveredPillTextColor="#ffffff"
-        pillTextColor="#000000"
+        baseColor="#ffffff"
+        pillColor="#000000"
+        hoveredPillTextColor="#000000"
+        pillTextColor="#ffffff"
       />
     </nav>
   );

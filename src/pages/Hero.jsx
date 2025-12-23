@@ -2,7 +2,7 @@ import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = () => {
-    document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -11,17 +11,16 @@ const Hero = () => {
         <div className="mb-8 w-fit">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-4">
             Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-gray-800 to-black/80 bg-clip-text text-transparent animate-pulse">
+            <span className="bg-gradient-to-r from-[#40ffaa] via-[#4079ff] via-[#4079ff] to-[#40ffaa] bg-clip-text text-transparent animate-pulse font-extrabold">
               Arideep Nandi
             </span>
           </h1>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-light mb-8 font-semibold">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl text-white font-light mb-8 font-semibold">
             Frontend Developer
           </h2>
-          <p className="text-lg text-gray-800 font-semibold max-w-2xl mx-auto leading-relaxed">
-            I craft beautiful, user-centric digital experiences with modern technologies.
-            Passionate about clean code, innovative design, and solving complex problems.
+          <p className="text-lg text-white font-semibold max-w-2xl mx-auto leading-relaxed">
+            I design and develop user-centric digital experiences using modern web technologies. Passionate about writing clean, maintainable code, crafting intuitive interfaces, and solving complex problems with elegant solutions.
           </p>
         </div>
 
@@ -38,7 +37,7 @@ const Hero = () => {
             download
             className="border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 cursor-pointer"
           >
-            Download CV
+            Download Resume
           </a>
         </div>
 

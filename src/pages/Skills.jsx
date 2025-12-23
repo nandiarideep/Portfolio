@@ -18,36 +18,36 @@ const Skills = () => {
     { name: "Jira", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
     { name: "Firebase", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
     { name: "Express", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
-    // { name: "React Router", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" },
+    { name: "Postman", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
   ];
 
   return (
-    <section id="skills" className="py-20 min-h-screen">
+    <section id="skills" className="py-20 min-h-dvh">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center md:mb-16 mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Skills & Tools
           </h2>
-          <p className="text-xl text-gray-800 font-semibold max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 italic font-semibold max-w-3xl mx-auto">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
         </div>
 
         {/* Skill Cards */}
-        <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-8 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
           {skills.map(({ name, img }) => (
             <div
               key={name}
-              className="group bg-gray-900/60 border border-gray-700 rounded-xl p-2 flex flex-col items-center justify-center 
-                transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20"
+              className="group bg-white/20 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center 
+                transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 min-h-[100px] sm:min-h-[120px]"
             >
               <img
                 src={img}
                 alt={name}
-                className="w-14 h-14 mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-2 sm:mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               />
-              <span className="text-gray-300 font-medium group-hover:text-white transition-colors duration-300">
+              <span className="text-gray-300 font-medium group-hover:text-white transition-colors duration-300 text-xs sm:text-sm text-center">
                 {name}
               </span>
             </div>

@@ -4,10 +4,10 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and real-time inventory updates.',
+      title: 'Dashboard',
+      description: 'A full-stack saas Dashboard solution with React, Node.js, Express & MongoDB. Features include data visualization with Apache-Echarts, CRUD operations and user management.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      tech: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Express', 'Apache-Echarts'],
       github: '#',
       live: '#'
     },
@@ -15,36 +15,28 @@ const Projects = () => {
       title: 'Task Management App',
       description: 'A collaborative project management tool built with React and Firebase. Includes real-time updates, drag-and-drop functionality, and team collaboration features.',
       image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React', 'Firebase', 'Tailwind CSS', 'JavaScript'],
-      github: '#',
+      tech: ['React', 'Firebase DB', 'Tailwind CSS', 'JavaScript', 'Express', 'Node.js'],
+      github: 'https://github.com/nandiarideep/To-Do-Full-Stack',
       live: '#'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with interactive charts and maps. Built with Vue.js and integrated with multiple weather APIs for accurate forecasting.',
+      title: 'Expense Tracker',
+      description: 'A responsive full-stack expense tracking application built with React & Apache-Echarts. Features include real-time expense visualization and data export capabilities.',
       image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS3'],
-      github: '#',
-      live: '#'
-    },
-    {
-      title: 'Social Media Analytics',
-      description: 'A comprehensive analytics dashboard for social media management. Features data visualization, automated reporting, and multi-platform integration.',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Python', 'Django', 'PostgreSQL', 'D3.js'],
+      tech: ['React', 'Apache-Echarts', 'Tailwind CSS', 'JavaScript', 'Express', 'Node.js', 'MongoDB'],
       github: '#',
       live: '#'
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
+    <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Featured Projects
+            My Projects
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 italic max-w-3xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development.
           </p>
         </div>
@@ -66,12 +58,26 @@ const Projects = () => {
                   <a
                     href={project.github}
                     className="p-2 bg-gray-900/80 rounded-full text-white hover:bg-gray-900 transition-colors duration-200"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (project.github === '#') {
+                        e.preventDefault();
+                      }
+                    }}
                   >
                     <Github size={16} />
                   </a>
                   <a
                     href={project.live}
                     className="p-2 bg-gray-900/80 rounded-full text-white hover:bg-gray-900 transition-colors duration-200"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (project.live === '#') {
+                        e.preventDefault();
+                      }
+                    }}
                   >
                     <ExternalLink size={16} />
                   </a>
@@ -82,7 +88,7 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-gray-200 text-sm leading-relaxed font-semibold italic mb-4">
                   {project.description}
                 </p>
                 
@@ -90,7 +96,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded text-blue-300 text-xs"
+                      className="px-2 py-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-md text-white text-xs"
                     >
                       {tech}
                     </span>

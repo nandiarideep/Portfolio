@@ -1,45 +1,39 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Eve from '@assets/eve.webp';
+import Nav from '@assets/nav.jpg';
+import Ime from '@assets/ime.jpg';
 
 const experiences = [
   {
-    date: "Jan 2021",
-    title: "Started Coding",
-    company: "Self-Learning",
-    logo: "/logos/self.png", // <-- replace with your logo path
-    description: "Began learning JavaScript and front-end fundamentals.",
+    date: "Jun 2023 ~ Sep 2023",
+    title: "Intern",
+    company: "Imeet Technology, Mathura",
+    logo: Ime,
+    description: "Began learning JavaScript, React & front-end fundamentals.",
   },
   {
-    date: "Jun 2022",
-    title: "Frontend Internship",
-    company: "TechStart Inc.",
-    logo: "/logos/techstart.png",
+    date: "Jan 2024 ~ Feb 2024",
+    title: "Systems Engineer Trainee",
+    company: "Navigators Software, Kolkata",
+    logo: Nav,
     description:
-      "Built UI components and optimized performance for an early-stage startup.",
+      "Development in Python.",
   },
   {
-    title: "React Developer",
-    company: "Company X",
-    logo: "/logos/companyx.png",
+    date: "Sep 2024 ~ Dec 2025",
+    title: "Frontend Developer",
+    company: "Eve Technologies, Kolkata",
+    logo: Eve,
     description:
-      "Contributed to a large-scale SaaS product and improved developer tooling.",
-  },
-  {
-    date: "Jul 2024",
-    title: "Frontend Engineer",
-    company: "Company X",
-    logo: "/logos/companyx.png",
-    description: "Promoted to lead front-end engineer and mentor junior devs.",
-  },
+      "Contributed to a large-scale SaaS product and improved UI/UX & scalability.",
+  }
 ];
 
-export default function ExperienceTimeline() {
+export default function Journey() {
   return (
-    <section id="journey" className="py-20 bg-gray-900 text-white">
+    <section id="journey" className=" text-white min-h-dvh pt-20 flex flex-col justify-center items-center">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-          My Journey
-        </h2>
 
         <div className="relative border-l border-gray-700 pl-6">
           {experiences.map((exp, index) => (
@@ -55,13 +49,13 @@ export default function ExperienceTimeline() {
               <span className="absolute -left-3 top-3 w-6 h-6 rounded-full bg-cyan-400 border-4 border-gray-900" />
 
               {/* Card */}
-              <div className="bg-gray-800 rounded-lg p-5 shadow-md flex flex-col sm:flex-row sm:items-center w-full">
+              <div className="bg-white/20 rounded-lg p-5 shadow-md flex flex-col sm:flex-row sm:items-center w-full hover:scale-101 transition-transform duration-300">
                 {/* Company Logo */}
                 <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
                   <motion.img
                     src={exp.logo}
                     alt={exp.company}
-                    className="h-14 w-14 object-contain rounded-sm border border-gray-700 p-1 bg-white"
+                    className="h-20 w-20 object-contain rounded-full border border-gray-700 p-1 bg-white"
                     initial={{ scale: 0.8, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
@@ -75,8 +69,8 @@ export default function ExperienceTimeline() {
                     {exp.date}
                   </time>
                   <h3 className="text-xl font-semibold mt-1">{exp.title}</h3>
-                  <p className="text-gray-400 text-sm mb-2">{exp.company}</p>
-                  <p className="mt-1 text-gray-300 leading-relaxed">
+                  <p className="text-gray-200 text-sm mb-2 font-semibold italic">{exp.company}</p>
+                  <p className="mt-1 text-gray-200 leading-relaxed font-semibold">
                     {exp.description}
                   </p>
                 </div>

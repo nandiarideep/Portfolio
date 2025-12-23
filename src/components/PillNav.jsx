@@ -29,6 +29,17 @@ const PillNav = ({
   const logoRef = useRef(null);
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobileMenuOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && !hamburgerRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     const layout = () => {
       circleRefs.current.forEach(circle => {
         if (!circle?.parentElement) return;

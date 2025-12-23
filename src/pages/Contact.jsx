@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, Youtube } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,37 +25,37 @@ const Contact = () => {
     {
       Icon: Mail,
       title: 'Email',
-      value: 'alex@example.com',
-      link: 'mailto:alex@example.com'
+      value: 'nandiarideep@gmail.com',
+      link: 'mailto:nandiarideep@gmail.com'
     },
     {
       Icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+91 7595932236',
+      link: 'tel: +917595932236'
     },
     {
       Icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Kolkata, India',
       link: '#'
     }
   ];
 
   const socialLinks = [
-    { Icon: Github, href: '#', name: 'GitHub' },
-    { Icon: Linkedin, href: '#', name: 'LinkedIn' },
-    { Icon: Twitter, href: '#', name: 'Twitter' }
+    { Icon: Github, href: 'https://github.com/nandiarideep', name: 'GitHub' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/in/arideep-nandi/', name: 'LinkedIn' },
+    { Icon: Youtube, href: 'https://www.youtube.com/@nandybhai97', name: 'Youtube' }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-800">
+    <section id="contact" className="py-20 min-h-dvh">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 italic max-w-3xl mx-auto">
             I'm always interested in new opportunities and collaborations.
             Let's create something amazing together!
           </p>
@@ -67,7 +67,7 @@ const Contact = () => {
             <h3 className="text-2xl font-semibold text-white mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-100 mb-2">
                   Name
                 </label>
                 <input
@@ -77,13 +77,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-300"
                   placeholder="Your name"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-100 mb-2">
                   Email
                 </label>
                 <input
@@ -93,13 +93,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-300"
                   placeholder="your.email@example.com"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-100 mb-2">
                   Message
                 </label>
                 <textarea
@@ -109,7 +109,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-300 resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -156,6 +156,7 @@ const Contact = () => {
                     href={href}
                     className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 text-gray-400 hover:text-white transition-all duration-200 hover:scale-110"
                     title={name}
+                    target="_blank"
                   >
                     <Icon size={20} />
                   </a>
